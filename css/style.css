@@ -473,3 +473,154 @@ a:hover {
 #header-carousel .btn-outline-primary {
     box-shadow: 0 0 25px rgba(255, 0, 76, .5);
 }
+
+
+/* Altura do hero para ocupar a tela inteira */
+#header-carousel,
+#header-carousel .carousel-inner,
+#header-carousel .carousel-item {
+    height: 100vh;          /* 100% da altura da janela */
+    min-height: 500px;      /* altura mínima pra não ficar achatado demais */
+}
+
+/* Slide com imagem de fundo responsiva */
+.hero-slide {
+    background-image: url("../img/carousel-1.jpg");
+    background-size: cover;         /* preenche a tela toda mantendo proporção */
+    background-position: center;    /* centraliza a imagem */
+    background-repeat: no-repeat;
+}
+
+
+
+/* ================= HERO ================= */
+
+.hero-area {
+    position: relative;
+    min-height: 100vh;                 /* ocupa a tela inteira */
+    display: flex;
+    align-items: center;
+    background-image: url("../img/bg-hero.jpg"); /* fundo gradiente */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(255,0,80,0.25), transparent 60%);
+    pointer-events: none;
+}
+
+.hero-area .container {
+    position: relative;
+    z-index: 2;  /* fica acima do overlay */
+}
+
+.hero-photo {
+    max-width: 100%;
+    border-radius: 30px;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* textos */
+.hero-kicker {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.hero-kicker span {
+    color: #ff0033;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 640px;
+}
+
+.hero-subtitle .text-highlight {
+    color: #ff0033;
+    font-weight: 800;
+}
+
+/* BOTÃO NEON */
+.btn-hero-cta {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 18px 64px;
+    background: #ff0033;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow:
+        0 0 10px #ff0033,
+        0 0 20px #ff0033,
+        0 0 40px #ff0033,
+        0 0 80px #ff0033;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-hero-cta:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+        0 0 15px #ff3366,
+        0 0 30px #ff3366,
+        0 0 60px #ff3366,
+        0 0 100px #ff3366;
+}
+
+/* RESPONSIVO */
+@media (max-width: 991.98px) {
+    .hero-area {
+        text-align: center;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-area {
+        min-height: 100vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-kicker {
+        font-size: 1.1rem;
+    }
+
+    .btn-hero-cta {
+        padding: 14px 40px;
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        width: 100%;
+        max-width: 260px;
+    }
+}
